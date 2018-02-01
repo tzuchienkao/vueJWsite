@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>index</title>
+<link rel="stylesheet" href="css/global.css">
+<link rel="stylesheet" href="css/index.css">
+<style type="text/css">
+    
+.fade-enter-active, .fade-leave-active {
+  transition: all 2s linear;
+}
+.fade-enter, .fade-leave-to {
+  opacity: 0;
+}
+
+</style>
+</head>
+<body>
+<!-- topHeader -->
+<div class="topBlock">
+    <div class="topbar">
+        <div class="main clearfix">
+            <ul class="channel float_l">
+                <li><a href="">窩客島</a></li>
+                <li class="select"><a href="">JapanWalker</a></li>
+            </ul>
+            <!-- logout -->
+            <ul class="member float_r" style="display:none;">
+                <li><a href="">會員登入</a></li>
+                <li><a href="">註冊</a></li>
+            </ul>
+            <!-- logout -->
+            <!-- login -->
+            <ul class="member float_r">
+                <li class="noborder_l"><a href="">會員 <span>熊痞痞VS兔眠眠</span>您好！(<span id="points">370</span>點)</a></li>
+                <li><a href="">簽到領獎</a></li>
+                <li><a href="">管理我的窩</a></li>
+                <li><a href="">我的收藏<span class="save_num">1</span></a></li>
+                <li><a href="">登出</a></li>
+                <li class="btn_add addPost noborder_l"><a href=""></a></li>
+                <li class="btn_add addSpot noborder_l"><a href=""></a></li>
+            </ul>
+            <!-- login End -->
+        </div>
+    </div>
+    <div class="header">
+       <div class="main clearfix">
+            <ul class="brand float_l">
+                <li class="brand_l">
+                    <!-- logo -->
+                    <div class="logo">
+                        <img src="https://www.taipeiwalker.com.tw/images/all/w6.jpg" alt="">
+                    </div>
+                    <!-- logo End -->
+                </li>
+                <li class="brand_r">
+                    <p class="slogan">說走就走，去日本旅行吧！</p>
+                    <!-- google search api -->
+                    <div class="searchbar">
+                        <!-- GOOGLE自訂搜尋：這裡塞<div class="searchbar">程式碼</div> -->
+                        <script>
+                          (function() {
+                            var cx = '009360124481792458737:xknrhbscoxo';
+                            var gcse = document.createElement('script');
+                            gcse.type = 'text/javascript';
+                            gcse.async = true;
+                            gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+                            var s = document.getElementsByTagName('script')[0];
+                            s.parentNode.insertBefore(gcse, s);
+                          })();
+                        </script>
+                        <gcse:searchbox-only resultsUrl="http://phptest-oyan114142960.codeanyapp.com/searchResult.html" newWindow="true" queryParameterName="searchbar"></gcse:searchbox-only>
+                    </div>
+                    <!-- google search api End -->
+                </li>
+            </ul>
+            <!-- ad block -->
+            <div class="ad_block float_r">
+                <!-- GOOGLE圖像廣告：728*90 -->
+                <a href="" class="google_ad typeImg">
+                    <img src="https://tpc.googlesyndication.com/simgad/16503278311150396491" alt="">
+                </a>
+                <!-- GOOGLE文字廣告：最多可以放14個全形字 -->
+                <ul class="google_ad typeTxt clearfix">
+                    <li><a href="">發現日本此生必遊絕美秘境</a></li>
+                    <li><a href="">東京近郊一日來回小旅行</a></li>
+                    <li><a href="">文字廣告：最多可以放14個全形字</a></li>
+                </ul>
+            </div>
+            <!-- ad block End -->
+        </div>
+    </div>
+    
+    <div class="navbar">
+        <div class="main clearfix">
+            <nav-component :list="mainMenu" :active="active"></nav-component>
+            <ul class="social float_r">
+                <li class="btnMedia iconFb">
+                    <a href=""></a>
+                </li>
+                <li class="btnMedia iconIg">
+                    <a href=""></a>
+                </li>
+                <li class="btnMedia iconYt">
+                    <a href=""></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- topHeader End -->
+<!-- midWrapper -->
+<div class="wrapper clearfix">
+    <div class="main clearfix">
+        <!-- key visual -->
+        <div class="keyVisual clearfix">
+            <!-- 輪播要加上總數量的判斷 v-if="XXX.length" -->
+            <div class="kv_banner float_l" v-if="imgList.length" @mouseenter="clearTimer" @mouseleave="setTimer">
+                <key-visual :active="active" :list="imgList" @next="nextImg"></key-visual>
+                <key-active :active="active" :total="imgList.length" @change="changeImg"></key-active>
+            </div>
+            <div class="map_img float_r">
+                <a href=""><img src="" width="370px" height="312px"></a>
+            </div>
+        </div>
+        <!-- bottom -->
+        <div class="content clearfix">
+            <div class="block_l float_l">
+                <!-- note -->
+                <div class="note">
+                    <div class="titleBlock clearfix">
+                        <ul class="title">
+                            <li class="float_l">
+                                <h2>遊記分享</h2>
+                                <span class="txt">想知道別人都怎麼規劃旅遊行程嗎？<br/>從哪個機場進出？四季能看到怎樣的風景？透過遊記將能找到答案。</span>
+                            </li>
+                            <li class="float_r">
+                                <div class="dropdown">
+                                    <label class="selectbar mainArea float_l">
+                                        <input type="checkbox" id="mainArea-switcher" class="select_switcher">
+                                        <div :id="this.active">{{ opt }}</div>
+                                        <ul class="option" v-if="mapMain.length">
+                                            <li v-for="(item, index) in mapMain" @click="selectLi(item,index)">
+                                                <label for="mainArea-switcher">{{ item }}</label>
+                                            </li>
+                                        </ul>
+                                    </label>
+
+                                    <label class="selectbar subArea float_l">
+                                        <input type="checkbox" id="subArea-switcher" class="select_switcher">
+                                        <div :id="this.active">{{ opt2 }}</div>
+                                        <ul class="option">
+                                            <li v-for="item in mapSub" @click="subSelect(item)" v-if="mapSub.length">
+                                                <label for="subArea-switcher">{{ item }}</label>
+                                            </li>
+                                        </ul>
+                                    </label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- note content -->
+                    <div class="noteList clearfix">
+                        <dl class="contBox clearfix">
+                            <dt class="pic float_l">
+                                <a href=""><img src="" alt=""></a>
+                            </dt>
+                            <dd class="detail">
+                                <a class="title" href="">
+                                    <h4>遊記標題最多兩行 --- 【日本遊記】箱根二日遊行程推薦 交通功略、必吃美食、必遊景點、溫泉飯店，交通功略、必吃美食、必遊景點、溫泉飯店</h4>
+                                </a>
+                                <span class="tag">東京</span>
+                                <a class="author" href=""><img src="" alt=""><span class="name">周花花，甲飽沒</span></a>
+                            </dd>
+                        </dl>
+                        <dl class="contBox clearfix">
+                            <dt class="pic float_l">
+                                <a href=""><img src="" alt=""></a>
+                            </dt>
+                            <dd class="detail">
+                                <a class="title" href="">
+                                    <h4>『日本遊記』戀戀北陸行DAY4-名古屋『笑笑居酒屋』</h4>
+                                </a>
+                                <span class="tag">北陸</span>
+                                <span class="tag">名古屋</span>
+                                <a class="author" href=""><img src="" alt=""><span class="name">Mika出走美食日誌</span></a>
+                            </dd>
+                        </dl>
+                        <dl class="contBox clearfix">
+                            <dt class="pic float_l">
+                                <a href=""><img src="" alt=""></a>
+                            </dt>
+                            <dd class="detail">
+                                <a class="title" href="">
+                                    <h4>[日本遊記] Nash 東京散步日記 Day1 (品川、上野、武藏關)</h4>
+                                </a>
+                                <span class="tag">東京</span>
+                                <a class="author" href=""><img src="" alt=""><span class="name">Nash，神之領域</span></a>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- note End -->
+            </div>
+            <div class="block_r float_r">
+                <!-- read -->
+                <div class="read">
+                    <div class="titleBlock clearfix">
+                        <div class="title">
+                            <h2>雜誌書籍</h2>
+                        </div>
+                    </div>
+                    <div class="contBlock">
+                        <div class="contBox">
+                            <h4 class="new_mag"><span>本月新刊</span>JapanWalker Vol.28</h4>
+                            <a class="pic" href=""><img src=""></a>
+                        </div>
+                        <a class="float_r" href="">看更多</a>
+                    </div>
+                </div>
+                <!-- read End -->
+                <a href=""><img src="" alt=""></a>
+                <iframe src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FJapanWalker.KADOKAWA%2F&tabs=timeline&width=300&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true&appId" width="300" height="500" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+            </div>
+        </div>
+        <!-- bottom End -->
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+<script src="js/vue.js"></script>
+<script src="js/header.js"></script>
+<script src="js/carousel.js"></script>
+<script src="js/map.js"></script>
+</body>
+</html>
