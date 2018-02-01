@@ -1,0 +1,70 @@
+/* reset setting */
+    body, ul, ol, li, dl, dt, dd, p, h1, h2, h3, h4, h5, h6 {padding:0;margin:0;}
+    ul, ol, li {list-style:none;}
+/* common style */
+    body {font-family:"Microsoft JhengHei UI", "Arial Unicode MS", "sans-serif";font-size:1em;color:#666;letter-spacing:1px;}
+    a {color:#3a3a3a;text-decoration:none;}
+    a:hover {color:#3a3a3a;text-decoration:underline;}
+    .clearfix {overflow:auto;*zoom:1;}
+    .clearfix:after {display:block;content:"";clear:both;}
+    .float_l {float:left;}
+    .float_r {float:right;}
+/* topHeader style */
+/*    .topBlock {margin-bottom:10px;}*/
+    .main {width:1200px;margin:0 auto;}
+    .main > ul > li {float:left;}
+    /* topbar */
+    .topbar {font-size:0.8em;line-height:2.6;background-color:#ededed;}
+    .topbar .channel a:hover {text-decoration:none;}
+    .topbar .channel li {padding:1px 8px;}
+    .topbar .channel li:hover, .topbar .channel .select {text-decoration:none;background-color:#fff;padding-top:0;border-top:1px solid #f2594f;}
+    .topbar .member a {padding:0 6px;border-left:1px solid #bbb;}
+    .topbar .member .btn_add a {width:60px;height:24px;background-color:#5faa31;margin-top:4px;margin-left:10px;display:block;}
+    .topbar .member .noborder_l a {border-left:0;}
+    .topbar .member .save_num {width:16px;height:16px;font-size:0.9em;line-height:1.4;color:#fff;text-align:center;vertical-align:middle;background-color:#f2900c;border-radius:100%;margin:0 2px;display:inline-block;}
+    /* header */
+    .header {padding:10px 0;overflow:hidden;}
+    .header .brand {font-size:0.75em;}
+    .header .brand .brand_r {margin-top:40px;margin-left:15px;}
+    .header .brand .slogan {margin-bottom:8px;}
+    /* google search api */
+    .gsc-search-box-tools .gsc-search-box .gsc-input {padding-right:0 !important;}
+    .cse .gsc-search-button input.gsc-search-button-v2, input.gsc-search-button-v2 {padding:6px !important;margin:0 !important;}
+    td.gsc-search-button {width:20px !important;}
+    input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {vertical-align:middle !important;}
+    /* google ad */
+    .header .ad_block {width:728px;}
+    .header .ad_block a {font-size:0.8em;}
+    .google_ad {margin-bottom:10px;}
+    .google_ad.typeImg {display: block;}
+    .google_ad.typeTxt li {width:31%;height:20px;list-style:disc inside;padding-left:10px;float:left;text-overflow:ellipsis;white-space:nowrap;overflow:hidden;}
+    .google_ad.typeTxt li a {margin-left:-8px;}
+    /* navbar */
+    .navbar {text-align:center;background-color:#ff7c73;box-shadow:0 2px 5px #ccc;}
+    .navbar a:hover {text-decoration:none;}
+    .nav li {font-size:0.75em;border-right:1px solid #e5e5e5;}
+    .nav li:first-child {border-left:1px solid #e5e5e5;}
+    .nav li a {width:110px;color:#fff;text-decoration:none;padding:10px;display:block;}
+    .nav li:hover a, .nav .select a {color:#f1594f;background-color:#f3f3f3;}
+    .nav li a p {font-size:1.25em;color:#fff;line-height:1.5;}
+    .nav li:hover a p, .nav .select a p {color:#f1594f;}
+    .social {margin-top:17px;}
+    .social .btnMedia {width:24px;height:24px;background-color:#ff7c73;background-image:url();background-repeat:no-repeat; border-radius:100%;margin-left:10px;overflow:hidden;}
+    .social .btnMedia.iconFb {background-position:;}
+    .social .btnMedia.iconIg {background-position:;}
+    .social .btnMedia.iconYt {background-position:;}
+    .social .btnMedia a {width:100%;height:100%;display:block;}
+/* footer style */
+    .footer {text-align:center;line-height:2;}
+    .footer .brand {background:#f3f3f3;padding-top:100px;margin-top:60px;}
+    .footer .var {background-color:#ffe2e0;padding:30px 0;margin-top:-30px;}
+    .footer .brand, .copyright {font-size:0.75em;}
+    .sitemap {margin:10px auto;display:inline-block;}
+    .sitemap li a {color:#f2594f;padding:0 20px;border-left:1px solid #f2594f;}
+    .sitemap li:first-child a {border-left:0;}
+/* index title block */
+.titleBlock .title {line-height:1.5;}
+.titleBlock .title h2 {font-size:1em;line-height:2;padding-right:5px;margin-right:5px;float:left;display:inline-block;}
+.titleBlock .title .txt {font-size:0.5em;font-weight:normal;display:inline-block;}
+
+.title .txt {}
