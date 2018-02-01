@@ -63,3 +63,5 @@
 .content .read {width:300px;margin-bottom:30px;}
 .new_mag {color:#35a763;border-bottom:1px solid #e5e5e5;}
 .new_mag span {font-weight:normal;border-bottom:2px solid #35a763;margin-right:5px;}
+.content .read .pic {display:block;}
+.content .read .pic img {width:100%;}
